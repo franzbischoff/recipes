@@ -174,7 +174,6 @@ data when <code>bake()</code> is invoked with a data set in <code>new_data</code
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Fireplaces &lt;int&gt;, Garage_Cars &lt;dbl&gt;, Garage_Area &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Wood_Deck_SF &lt;int&gt;, Open_Porch_SF &lt;int&gt;, Enclosed_Porch &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Three_season_porch &lt;int&gt;, Screen_Porch &lt;int&gt;, Pool_Area &lt;int&gt;, …</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># apply processing to other data:</span></span></span>
 <span class="r-in"><span><span class="fu">bake</span><span class="op">(</span><span class="va">ames_rec</span>, new_data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ames</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -194,7 +193,6 @@ data when <code>bake()</code> is invoked with a data set in <code>new_data</code
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Garage_Cars &lt;dbl&gt;, Garage_Area &lt;dbl&gt;, Wood_Deck_SF &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Open_Porch_SF &lt;int&gt;, Enclosed_Porch &lt;int&gt;, Three_season_porch &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Screen_Porch &lt;int&gt;, Pool_Area &lt;int&gt;, Misc_Val &lt;int&gt;, Mo_Sold &lt;int&gt;, …</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `colnames()` to see all variable names</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># only return selected variables:</span></span></span>
 <span class="r-in"><span><span class="fu">bake</span><span class="op">(</span><span class="va">ames_rec</span>, new_data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ames</span><span class="op">)</span>, <span class="fu"><a href="has_role.html">all_numeric_predictors</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -214,7 +212,6 @@ data when <code>bake()</code> is invoked with a data set in <code>new_data</code
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Garage_Cars &lt;dbl&gt;, Garage_Area &lt;dbl&gt;, Wood_Deck_SF &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Open_Porch_SF &lt;int&gt;, Enclosed_Porch &lt;int&gt;, Three_season_porch &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Screen_Porch &lt;int&gt;, Pool_Area &lt;int&gt;, Misc_Val &lt;int&gt;, Mo_Sold &lt;int&gt;, …</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `colnames()` to see all variable names</span></span>
 <span class="r-in"><span><span class="fu">bake</span><span class="op">(</span><span class="va">ames_rec</span>, new_data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ames</span><span class="op">)</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">starts_with</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Longitude"</span>, <span class="st">"Latitude"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Longitude_ns_1 Longitude_ns_2 Latitude_ns_1 Latitude_ns_2</span>

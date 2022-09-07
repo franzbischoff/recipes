@@ -187,8 +187,7 @@ vignette goes over the basics of using selection functions.
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>         9    12    27 good             0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>         0    60    32 good             0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>         0    48    41 bad              0</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 4,444 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 4,444 more rows</span></span></span></code></pre></div>
 <p><code>Status</code> is unaffected.</p>
 <p>One important aspect about selecting variables in steps is that the variable names and types may change as steps are being executed. In the above example, <code>Records</code> is a factor variable before the step is executed. Afterwards, <code>Records</code> is gone and the binary variable <code>Records_yes</code> is in its place. One reason to have general selection routines like <code><a href="../reference/has_role.html">all_predictors()</a></code> or <code><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">contains()</a></code> is to be able to select variables that have not be created yet.</p>
   </main>
