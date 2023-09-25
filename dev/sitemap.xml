@@ -85,6 +85,9 @@
     <loc>https://recipes.tidymodels.org/dev/reference/detect_step.html</loc>
   </url>
   <url>
+    <loc>https://recipes.tidymodels.org/dev/reference/developer_functions.html</loc>
+  </url>
+  <url>
     <loc>https://recipes.tidymodels.org/dev/reference/discretize.html</loc>
   </url>
   <url>
@@ -148,7 +151,13 @@
     <loc>https://recipes.tidymodels.org/dev/reference/recipes_pkg_check.html</loc>
   </url>
   <url>
+    <loc>https://recipes.tidymodels.org/dev/reference/recipes_remove_cols.html</loc>
+  </url>
+  <url>
     <loc>https://recipes.tidymodels.org/dev/reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>https://recipes.tidymodels.org/dev/reference/remove_original_cols.html</loc>
   </url>
   <url>
     <loc>https://recipes.tidymodels.org/dev/reference/required_pkgs.recipe.html</loc>
@@ -182,6 +191,9 @@
   </url>
   <url>
     <loc>https://recipes.tidymodels.org/dev/reference/step_classdist.html</loc>
+  </url>
+  <url>
+    <loc>https://recipes.tidymodels.org/dev/reference/step_classdist_shrunken.html</loc>
   </url>
   <url>
     <loc>https://recipes.tidymodels.org/dev/reference/step_corr.html</loc>
