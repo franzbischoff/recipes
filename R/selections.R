@@ -45,6 +45,11 @@
 #'   [tidyselect::one_of()], [tidyselect::all_of()], and
 #'   [tidyselect::any_of()]
 #'
+#' Note that using [tidyselect::everything()] or any of the other `tidyselect`
+#' functions aren't restricted to predictors. They will thus select outcomes,
+#' ID, and predictor columns alike. This is why these functions should be used
+#' with care, and why [tidyselect::everything()] likely isn't what you need.
+#' 
 #' For example:
 #'
 #' \preformatted{
@@ -193,6 +198,17 @@ recipes_eval_select <- function(quos, data, info, ..., allow_rename = FALSE,
   local_current_info(nested_info)
 
   expr <- expr(c(!!!quos))
+
+  if ((!allow_rename) && any(names(expr) != "")) {
+    offenders <- names(expr)
+    offenders <- offenders[offenders != ""]
+
+    cli::cli_abort(
+      "The following argument{?s} {?was/were} specified but do not exist: \\
+      {.arg {offenders}}.", 
+      call = call
+  )
+  }
 
   sel <- tidyselect::eval_select(
     expr = expr,

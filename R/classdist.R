@@ -17,6 +17,8 @@
 #'  the natural log function?
 #' @param objects Statistics are stored here once this step has
 #'  been trained by [prep()].
+#' @param keep_original_cols A logical to keep the original variables in the
+#'  output. Defaults to `TRUE`.
 #' @template step-return
 #' @family multivariate transformation steps
 #' @export
@@ -79,7 +81,7 @@
 #'
 #' rec_dists <- prep(rec, training = penguins)
 #'
-#' dists_to_species <- bake(rec_dists, new_data = penguins, everything())
+#' dists_to_species <- bake(rec_dists, new_data = penguins)
 #' ## on log scale:
 #' dist_cols <- grep("classdist", names(dists_to_species), value = TRUE)
 #' dists_to_species[, c("species", dist_cols)]
