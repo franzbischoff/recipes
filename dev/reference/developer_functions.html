@@ -95,6 +95,11 @@ used to turn the <code>terms</code> object into a character vector of the select
 variables.</p>
 <p>It will most likely be used like so:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="va">col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recipes_eval_select.html">recipes_eval_select</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">terms</span>, <span class="va">training</span>, <span class="va">info</span><span class="op">)</span></span></code></pre><p></p></div>
+<p><code><a href="recipes_argument_select.html">recipes_argument_select()</a></code> is used within <code>prep.step_*()</code> functions in the
+same way as <code><a href="recipes_eval_select.html">recipes_eval_select()</a></code> but is intended to be used for arguments
+such as <code>denom</code> in <code><a href="step_ratio.html">step_ratio()</a></code>.</p>
+<p>It will most likely be used like so:</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="va">outcome_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recipes_argument_select.html">recipes_argument_select</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">outcome</span>, <span class="va">training</span>, <span class="va">info</span><span class="op">)</span></span></code></pre><p></p></div>
 <p><code><a href="check_type.html">check_type()</a></code> can be used within <code>prep.step_*()</code> functions to check that the
 variables passed in are the right types. We recommend that you use the
 <code>types</code> argument as it offers higher flexibility and it matches the types
@@ -102,6 +107,16 @@ defined by <code><a href="get_data_types.html">.get_data_types()</a></code>. Whe
 explicit, e.g. writing <code>types = c("double", "integer")</code> instead of <code>types = "numeric"</code>, as it produces cleaner error messages.</p>
 <p>It should be used like so:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="../reference/check_type.html">check_type</a></span><span class="op">(</span><span class="va">training</span><span class="op">[</span>, <span class="va">col_names</span><span class="op">]</span>, types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"double"</span>, <span class="st">"integer"</span><span class="op">)</span><span class="op">)</span></span></code></pre><p></p></div>
+<p><code><a href="check_options.html">check_options()</a></code> can be used within <code>prep.step_*()</code> functions to check that
+the <code>options</code> argument contains the right elements. It doens't check the
+types of the elements, just that <code>options</code> is a named list and it includes
+or excludes some names.</p>
+<p>It should be used like so:</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="co"># When you know some arguments are excluded</span></span>
+<span><span class="fu"><a href="../reference/check_options.html">check_options</a></span><span class="op">(</span><span class="va">xoptions</span>, exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"pattern"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># When you know all legal elements</span></span>
+<span><span class="fu"><a href="../reference/check_options.html">check_options</a></span><span class="op">(</span><span class="va">xoptions</span>, include <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"nthread"</span>, <span class="st">"eps"</span><span class="op">)</span><span class="op">)</span></span></code></pre><p></p></div>
 <p><code><a href="check_new_data.html">check_new_data()</a></code> should be used within <code>bake.step_*()</code>. This function is
 used to make check that the required columns are present in the data. It
 should be one of the first lines inside the function.</p>
